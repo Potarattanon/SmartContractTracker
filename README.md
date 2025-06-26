@@ -2,8 +2,6 @@
 
 ระบบจัดการเอกสารสัญญาด้วย AI ที่ช่วยติดตามวันหมดอายุและแจ้งเตือนล่วงหน้า เพื่อให้คุณไม่พลาดกำหนดสำคัญอีกต่อไป
 
-![Smart Contract Tracker](https://images.pexels.com/photos/5668882/pexels-photo-5668882.jpeg?auto=compress&cs=tinysrgb&w=1200&h=400&fit=crop)
-
 ## ✨ ฟีเจอร์หลัก
 
 - 📄 **อัปโหลดเอกสาร** - รองรับไฟล์ PDF และ PNG
