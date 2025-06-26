@@ -49,9 +49,9 @@ export function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50/50 via-white to-teal-50/50 flex items-center justify-center py-12 px-6">
-      <div className="max-w-md w-full space-y-8">
-        <div className="text-center">
+    <div className="h-screen bg-gradient-to-br from-blue-50/50 via-white to-teal-50/50 flex items-center justify-center px-6 overflow-hidden">
+      <div className="max-w-md w-full">
+        <div className="text-center mb-6">
           <Link to="/" className="inline-flex items-center space-x-3">
             <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-teal-600 rounded-2xl flex items-center justify-center shadow-soft">
               <FileText className="h-7 w-7 text-white" />
@@ -60,10 +60,10 @@ export function LoginPage() {
               Smart Contract Tracker
             </h1>
           </Link>
-          <h2 className="mt-8 text-3xl font-bold text-gray-900">
+          <h2 className="mt-6 text-3xl font-bold text-gray-900">
             เข้าสู่ระบบ
           </h2>
-          <p className="mt-3 text-sm text-gray-600 font-medium">
+          <p className="mt-2 text-sm text-gray-600 font-medium">
             ยังไม่มีบัญชี?{' '}
             <Link
               to="/signup"
@@ -74,9 +74,9 @@ export function LoginPage() {
           </p>
         </div>
 
-        <div className="bg-white p-8 rounded-2xl shadow-medium border border-gray-100/50">
+        <div className="bg-white p-6 rounded-2xl shadow-medium border border-gray-100/50">
           {error && (
-            <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm font-medium mb-6">
+            <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm font-medium mb-4">
               {error}
             </div>
           )}
@@ -85,7 +85,7 @@ export function LoginPage() {
           <button
             onClick={handleGoogleSignIn}
             disabled={googleLoading}
-            className="w-full flex items-center justify-center px-4 py-3.5 border border-gray-200 rounded-xl text-sm font-semibold text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 mb-6 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full flex items-center justify-center px-4 py-3 border border-gray-200 rounded-xl text-sm font-semibold text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 mb-4 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {googleLoading ? (
               <Loader2 className="h-5 w-5 animate-spin" />
@@ -102,7 +102,7 @@ export function LoginPage() {
             )}
           </button>
 
-          <div className="relative mb-6">
+          <div className="relative mb-4">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-gray-200" />
             </div>
@@ -111,9 +111,9 @@ export function LoginPage() {
             </div>
           </div>
 
-          <form className="space-y-6" onSubmit={handleSubmit}>
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-3">
+              <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
                 อีเมล
               </label>
               <input
@@ -124,13 +124,13 @@ export function LoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="appearance-none relative block w-full px-4 py-3.5 border border-gray-200 placeholder-gray-500 text-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 font-medium"
+                className="appearance-none relative block w-full px-4 py-3 border border-gray-200 placeholder-gray-500 text-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 font-medium"
                 placeholder="กรอกอีเมลของคุณ"
               />
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-semibold text-gray-700 mb-3">
+              <label htmlFor="password" className="block text-sm font-semibold text-gray-700 mb-2">
                 รหัสผ่าน
               </label>
               <div className="relative">
@@ -142,18 +142,18 @@ export function LoginPage() {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="appearance-none relative block w-full px-4 py-3.5 pr-12 border border-gray-200 placeholder-gray-500 text-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 font-medium"
+                  className="appearance-none relative block w-full px-4 py-3 border border-gray-200 placeholder-gray-500 text-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 font-medium pr-12"
                   placeholder="กรอกรหัสผ่านของคุณ"
                 />
                 <button
                   type="button"
-                  className="absolute inset-y-0 right-0 pr-3 flex items-center"
+                  className="absolute inset-y-0 right-0 pr-4 flex items-center"
                   onClick={() => setShowPassword(!showPassword)}
                 >
                   {showPassword ? (
-                    <EyeOff className="h-5 w-5 text-gray-400 hover:text-gray-600" />
+                    <EyeOff className="h-5 w-5 text-gray-400 hover:text-gray-600 transition-colors" />
                   ) : (
-                    <Eye className="h-5 w-5 text-gray-400 hover:text-gray-600" />
+                    <Eye className="h-5 w-5 text-gray-400 hover:text-gray-600 transition-colors" />
                   )}
                 </button>
               </div>
@@ -172,7 +172,7 @@ export function LoginPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="group relative w-full flex justify-center py-3.5 px-4 border border-transparent text-sm font-semibold rounded-xl text-white bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-soft hover:shadow-medium transform hover:-translate-y-0.5"
+                className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-semibold rounded-xl text-white bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-soft hover:shadow-medium transform hover:-translate-y-0.5"
               >
                 {loading ? (
                   <Loader2 className="h-5 w-5 animate-spin" />
@@ -184,7 +184,7 @@ export function LoginPage() {
           </form>
         </div>
 
-        <div className="text-center">
+        <div className="text-center mt-4">
           <Link
             to="/"
             className="text-sm text-gray-600 hover:text-gray-900 transition-colors font-medium"
